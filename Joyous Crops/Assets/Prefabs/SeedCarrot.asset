@@ -1,0 +1,21 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 11ed42b71acd1184c974605a1af21c23, type: 3}
+  m_Name: SeedCarrot
+  m_EditorClassIdentifier: 
+  seedName: SeedCarrot
+  prefab: {fileID: 1559160916328184416, guid: 931fd1ea59360e844b730e3896f40f56, type: 3}
+  icon: {fileID: 21300000, guid: 9c95f4b40a0c1204ebb5305c290ec253, type: 3}
+  harvestName: 
+  harvestIcon: {fileID: 21300000, guid: 78ef92375d6a6854f91a21a76a63ae98, type: 3}
+  harvestPrefab: {fileID: 0}
+  harvestQty: 1

@@ -3,15 +3,21 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 2
-  tags: []
+  tags:
+  - Soil
+  - Audio
+  - blue portal
+  - orange portal
+  - waterpot
+  - river
   layers:
   - Default
   - TransparentFX
   - Ignore Raycast
-  - 
+  - Soil
   - Water
   - UI
-  - 
+  - River
   - 
   - 
   - 
@@ -40,4 +46,19 @@ TagManager:
   m_SortingLayers:
   - name: Default
     uniqueID: 0
+    locked: 0
+  - name: Player
+    uniqueID: 1166479133
+    locked: 0
+  - name: waterpot
+    uniqueID: 27566439
+    locked: 0
+  - name: pintu
+    uniqueID: 3753054787
+    locked: 0
+  - name: hoe
+    uniqueID: 3204884575
+    locked: 0
+  - name: Effect
+    uniqueID: 2773873911
     locked: 0

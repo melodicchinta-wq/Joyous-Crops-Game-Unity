@@ -4,21 +4,21 @@ using UnityEngine;
 
 public class GameManager : MonoBehaviour
 {
+    public OverlayFade overlayFade;
+
     public static GameManager instance;
 
-    public ItemManager ItemManager;
+    public TileManager tileManager;
     private void Awake()
     {
-        if (instance != null && instance != this)
-        {
-            Destroy(this.gameObject);
-        }
+        // Buat Singleton
+        if (instance == null)
+            instance = this;
         else
         {
-            instance = this;
+            Destroy(gameObject);
+            return;
         }
-        DontDestroyOnLoad(gameObject);
-
-        ItemManager = GetComponent<ItemManager>();
+        tileManager = GetComponent<TileManager>();
     }
 }
