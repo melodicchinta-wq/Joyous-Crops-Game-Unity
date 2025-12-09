@@ -53,7 +53,7 @@ MonoBehaviour:
   waterDeadline: 7
   fertilizerSpeedMultiplier: 1.7
   maxStage: 2
-  seedData: {fileID: 11400000, guid: 7f1470e3b822b884892b906b2b738b01, type: 2}
+  seedData: {fileID: 11400000, guid: ac8731ddb3b94774b8c25bfbd41cb5dd, type: 2}
 --- !u!212 &5945598696702294937
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -142,7 +142,7 @@ BoxCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 4, y: 4}
+    oldSize: {x: 1.3333334, y: 1.3333334}
     newSize: {x: 4, y: 4}
     adaptiveTilingThreshold: 0.5
     drawMode: 0

@@ -1,16 +1,17 @@
 fileFormatVersion: 2
-guid: e3265ab4bf004d28a9537516768c1c75
+guid: da0335dce4e30834d9540bdbe9f3af4d
 TrueTypeFontImporter:
   externalObjects: {}
   serializedVersion: 4
-  fontSize: 40
+  fontSize: 16
   forceTextureCase: -1
   characterSpacing: 0
   characterPadding: 1
   includeFontData: 1
   fontNames:
-  - Liberation Sans
-  fallbackFontReferences: []
+  - Special Ceremony
+  fallbackFontReferences:
+  - {fileID: 12800000, guid: 06e4f058c5c038647bde99a740dc8207, type: 3}
   customCharacters: 
   fontRenderingMode: 0
   ascentCalculationMode: 1
