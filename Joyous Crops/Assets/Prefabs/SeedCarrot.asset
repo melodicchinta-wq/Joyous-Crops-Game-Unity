@@ -15,7 +15,7 @@ MonoBehaviour:
   seedName: SeedCarrot
   prefab: {fileID: 1559160916328184416, guid: 931fd1ea59360e844b730e3896f40f56, type: 3}
   icon: {fileID: 21300000, guid: 9c95f4b40a0c1204ebb5305c290ec253, type: 3}
-  harvestName: 
+  harvestName: Carrot
   harvestIcon: {fileID: 21300000, guid: 78ef92375d6a6854f91a21a76a63ae98, type: 3}
   harvestPrefab: {fileID: 0}
   harvestQty: 1

@@ -15,7 +15,7 @@ MonoBehaviour:
   seedName: SeedOnion
   prefab: {fileID: 3130303154547163022, guid: 606bd9096b83cbd47befe49c64649709, type: 3}
   icon: {fileID: 21300000, guid: ff4d0d4a21aa89640a3d25746004545c, type: 3}
-  harvestName: 
+  harvestName: Onion
   harvestIcon: {fileID: 21300000, guid: 486c111376b9f8b45961be5806ecccc8, type: 3}
   harvestPrefab: {fileID: 0}
   harvestQty: 1

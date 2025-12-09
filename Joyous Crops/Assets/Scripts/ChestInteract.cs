@@ -1,4 +1,4 @@
-using UnityEngine;
+﻿using UnityEngine;
 
 public class ChestInteract : MonoBehaviour
 {
@@ -48,8 +48,6 @@ public class ChestInteract : MonoBehaviour
             isPlayerNear = false;
             if (interactHint != null)
                 interactHint.SetActive(false);
-
-            chestPanel.SetActive(false);
             isOpen = false;
         }
     }
