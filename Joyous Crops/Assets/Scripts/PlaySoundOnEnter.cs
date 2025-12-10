@@ -3,6 +3,7 @@ using UnityEngine;
 public class PlaySoundOnEnter : MonoBehaviour
 {
     private AudioSource source;
+    private Coroutine fadeCoroutine;
 
     [Header("Fade Settings")]
     public float fadeInSpeed = 1f;
@@ -13,18 +14,21 @@ public class PlaySoundOnEnter : MonoBehaviour
     {
         source = GetComponent<AudioSource>();
         source.volume = 0f;   // mulai dari sunyi
-        source.loop = true;   // biar musik terus
+        source.loop = true;   // musik terus berulang
     }
 
     private void OnTriggerEnter2D(Collider2D other)
     {
         if (other.CompareTag("Player"))
         {
-            StopAllCoroutines();
+            // hentikan coroutine lama
+            if (fadeCoroutine != null) StopCoroutine(fadeCoroutine);
+
             if (!source.isPlaying) source.Play();
-            StartCoroutine(FadeIn());
-            // FADE OUT BGM
-            BGMFader.Instance.FadeOutBGM();
+            fadeCoroutine = StartCoroutine(FadeToVolume(targetVolume, fadeInSpeed));
+
+            // fade out background
+            if (BGMFader.Instance != null) BGMFader.Instance.FadeOutBGM();
         }
     }
 
@@ -32,31 +36,24 @@ public class PlaySoundOnEnter : MonoBehaviour
     {
         if (other.CompareTag("Player"))
         {
-            StopAllCoroutines();
-            StartCoroutine(FadeOut());
-            // FADE IN BGM
-            BGMFader.Instance.FadeInBGM();
+            if (fadeCoroutine != null) StopCoroutine(fadeCoroutine);
+            fadeCoroutine = StartCoroutine(FadeToVolume(0f, fadeOutSpeed, stopAfterFade: true));
+
+            // fade in background
+            if (BGMFader.Instance != null) BGMFader.Instance.FadeInBGM();
         }
     }
 
-    private System.Collections.IEnumerator FadeIn()
+    private System.Collections.IEnumerator FadeToVolume(float target, float speed, bool stopAfterFade = false)
     {
-        while (source.volume < targetVolume)
+        while (!Mathf.Approximately(source.volume, target))
         {
-            source.volume += Time.deltaTime * fadeInSpeed;
+            source.volume = Mathf.MoveTowards(source.volume, target, speed * Time.deltaTime);
             yield return null;
         }
-        source.volume = targetVolume;
-    }
 
-    private System.Collections.IEnumerator FadeOut()
-    {
-        while (source.volume > 0f)
-        {
-            source.volume -= Time.deltaTime * fadeOutSpeed;
-            yield return null;
-        }
-        source.volume = 0f;
-        source.Stop();
+        source.volume = target;
+
+        if (stopAfterFade) source.Stop();
     }
 }
