@@ -26,16 +26,9 @@ public class NPCDialog : MonoBehaviour
     private bool isPlayerNear = false;
     private bool hasGivenItems = false;
     private bool isTalking = false;
-
-    AudioManager audioManager;
     public void StartDialogFromInteract()
     {
         StartDialog();   // panggil dialog utama
-    }
-
-    private void Awake()
-    {
-        audioManager = GameObject.FindGameObjectWithTag("Audio").GetComponent<AudioManager>();
     }
 
     void Update()
@@ -189,8 +182,6 @@ public class NPCDialog : MonoBehaviour
         ui.ApplyInventoryAddsToSlots();
         ui.SyncInventoryWithUI();
         ui.UpdateUI();
-
-        audioManager.PlaySFX(audioManager.feedback);
 
         Debug.Log("NPC memberi Hoe + Seed!");
     }

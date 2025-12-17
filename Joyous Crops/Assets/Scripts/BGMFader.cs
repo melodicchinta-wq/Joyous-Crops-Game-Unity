@@ -11,7 +11,15 @@ public class BGMFader : MonoBehaviour
 
     private void Awake()
     {
-        Instance = this;
+        if (Instance == null)
+        {
+            Instance = this;
+            DontDestroyOnLoad(gameObject);
+        }
+        else
+        {
+            Destroy(gameObject);
+        }
     }
 
     private void Update()
@@ -28,7 +36,7 @@ public class BGMFader : MonoBehaviour
 
     public void FadeOutBGM()
     {
-        targetVolume = 0f; // Jangan 0 biar masih terdengar halus
+        targetVolume = 0f;
     }
 
     public void FadeInBGM()

@@ -1,4 +1,4 @@
-using System.Collections;
+﻿using System.Collections;
 using UnityEngine;
 
 public class Sleep : MonoBehaviour
@@ -22,7 +22,6 @@ public class Sleep : MonoBehaviour
         TimeController.instance.day++;   // tambah hari
         TimeController.instance.hour = 6;
         TimeController.instance.minute = 0;
-        WeatherManager.instance.OnNewDay(); // Update cuaca
 
         // Tunggu sebentar (opsional)
         yield return new WaitForSeconds(0.5f);
